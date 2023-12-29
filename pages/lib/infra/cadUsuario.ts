@@ -6,7 +6,6 @@ import crypto from 'crypto';
 
 
 export async function cadastrarUsuario(usuario: Usuario) {
-console.log("=======>", usuario.nome);
 
 const schema = z.object({
     email: z.string().min(7),
