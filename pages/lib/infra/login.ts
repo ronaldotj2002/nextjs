@@ -1,8 +1,6 @@
 import { Usuario } from "../models/usuatios";
 import { sql } from "@vercel/postgres";
 
-// import { sql } from "@vercel/postgres";
-
 export async function getUsuarioPorEmail(email: string): Promise<Usuario | undefined> {
     
     try {
