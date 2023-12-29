@@ -12,7 +12,9 @@
   "browser":{
     "child_process": false,
     "mock-aws-s3": false,
-    "aws-sdk": false 
+    "aws-sdk": false, 
+    "nock": false,
+    "tls": false
     } ,
   "dependencies": {
     "@vercel/postgres": "0.5.1",
