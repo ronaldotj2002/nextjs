@@ -17,6 +17,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/lib/infra/HttpClient/HttpClient.js", "pages/financas/index.jsx", "pages/index.jsx"],
   "exclude": ["node_modules"]
 }
