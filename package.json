@@ -9,6 +9,11 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browser":{
+    "child_process": false,
+    "mock-aws-s3": false,
+    "aws-sdk": false 
+    } ,
   "dependencies": {
     "@vercel/postgres": "0.5.1",
     "bcrypt": "5.1.1",
