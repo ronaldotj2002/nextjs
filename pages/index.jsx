@@ -2,7 +2,6 @@
 import { tokenService } from '@/service/tokenService';
 import React from 'react';
 import { getUsuarioSession } from './api/session';
-import { any } from 'zod';
 
 function usesession() {
   const [session, setSession] = React.useState(Object);
@@ -32,10 +31,6 @@ function usesession() {
       }
     }
  
-    // tokenService.get().then(() => {
-
-    // })
-    // console.log("session")
     fetchToken();
 
   }, []);

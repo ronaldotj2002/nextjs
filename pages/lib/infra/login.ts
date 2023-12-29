@@ -1,7 +1,3 @@
-
-
-// import { signIn } from "../../../auth";
-import { AuthError } from "next-auth";
 import { Usuario } from "../models/usuatios";
 import { sql } from "@vercel/postgres";
 
@@ -19,15 +15,3 @@ export async function getUsuarioPorEmail(email: string): Promise<Usuario | undef
 
     }
 }
-
-// export async function login(dados:any) {
-//     console.log("DADOS ===>", dados);
-//     try {
-//         await signIn('credentials', dados);
-//     } catch (err) {
-//         if(err instanceof AuthError) {
-//             return 'Login Inválido.'
-//         }
-//         throw err
-//     }
-// }
