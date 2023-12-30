@@ -13,7 +13,8 @@ module.exports = {
       nock: false,
       tls: false,
       dgram: false,
-      dns: false
+      dns: false,
+      timers: require.resolve('timers'),
      };
 
     if (!isServer) {
