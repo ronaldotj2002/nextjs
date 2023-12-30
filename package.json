@@ -34,10 +34,10 @@
     "typescript": "^5"
   },
   "browser": {
-    "child_process": false,
-    "mock-aws-s3": false,
-    "aws-sdk": false,
-    "nock": false,
-    "tls": false
+    "child_process": true,
+    "mock-aws-s3": true,
+    "aws-sdk": true,
+    "nock": true,
+    "tls": true
   }
 }
