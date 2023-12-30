@@ -11,7 +11,8 @@ module.exports = {
       "mock-aws-s3": false,
       "aws-sdk": false,
       nock: false,
-      tls: false };
+      tls: false,
+      dgram: false };
 
     if (!isServer) {
       config.module.rules.push({
