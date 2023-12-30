@@ -1,5 +1,5 @@
 import { sql } from "@vercel/postgres";
-import { Usuario } from "../models/usuatios";
+import { Usuario } from "../models/usuarios";
 import bcrypt from 'bcrypt';
 import { z } from 'zod';
 import crypto from 'crypto';

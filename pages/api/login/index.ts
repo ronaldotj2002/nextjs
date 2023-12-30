@@ -1,5 +1,5 @@
 
-import { Usuario } from "@/pages/lib/models/usuatios";
+import { Usuario } from "@/pages/lib/models/usuarios";
 import { sql } from "@vercel/postgres";
 import bcrypt from "bcrypt";
 
