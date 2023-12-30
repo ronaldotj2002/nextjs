@@ -8,15 +8,15 @@ const nextConfig = {
   experimental: {
     forceSwcTransforms: true,
   },
-  module: {
-    rules: [
-      {
-        test: /\.html$/,
-        use: 'html-loader'
-      }
-      // ... outras regras de loaders, se necessário
-    ]
-  }
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.html$/,
+  //       use: 'html-loader'
+  //     }
+  //     // ... outras regras de loaders, se necessário
+  //   ]
+  // }
 }
 
 module.exports = nextConfig

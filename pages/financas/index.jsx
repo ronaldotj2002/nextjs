@@ -29,7 +29,7 @@ export default function Financas(props) {
 }
 
 
-export async function getServerSideProps(ctx) {
+export async function GetServerSideProps(ctx) {
 
   
   const session = tokenService.get(ctx)

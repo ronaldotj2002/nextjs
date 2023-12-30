@@ -3,7 +3,7 @@ import { tokenService } from '@/service/tokenService';
 import React from 'react';
 import { getUsuarioSession } from './api/session';
 
-function usesession() {
+function Usesession() {
   const [session, setSession] = React.useState(Object);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
@@ -45,7 +45,7 @@ function usesession() {
 
 export default function Home(props) {
 
-  const session = usesession();
+  const session = Usesession();
 
   console.log("==>",session)
 
