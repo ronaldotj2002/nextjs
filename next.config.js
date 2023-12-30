@@ -14,7 +14,7 @@ const nextConfig = {
   //       test: /\.html$/,
   //       use: 'html-loader'
   //     }
-  //     // ... outras regras de loaders, se necessário
+     
   //   ]
   // }
 }
