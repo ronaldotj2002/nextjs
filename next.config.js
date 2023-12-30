@@ -1,6 +1,6 @@
 module.exports = {
   // reactStrictMode: true,
-  webpack5: true,
+  // webpack5: true,
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.resolve.fallback = { ...config.resolve.fallback, net: false, os: false, fs: false };
 
