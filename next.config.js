@@ -12,7 +12,8 @@ module.exports = {
       "aws-sdk": false,
       nock: false,
       tls: false,
-      dgram: false };
+      dgram: false,
+      dns: false };
 
     if (!isServer) {
       config.module.rules.push({
