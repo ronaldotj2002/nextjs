@@ -4,8 +4,6 @@ import { Despesas } from "../models/despesas";
 
 export async function cadastrarDespesa(dados: Despesas) {
 
-    console.log("DADDESPESA BANCO", dados)
-
 const schema = z.object({
     data:z.string().min((8), 'É preciso informar a data'),
     despesa: z.string().min((5), 'É preciso informar no mínimo 5 caracteres'),
@@ -22,9 +20,6 @@ const schema = z.object({
     id_usuario: dados.id_usuario
 })
 
-console.log("PARSE BASE", dados)
-console.log("schema BASE", schema)
-
     try {
         const create = await sql<Despesas>`
             INSERT INTO despesas 
@@ -35,7 +30,6 @@ console.log("schema BASE", schema)
         `;
         // return create.rows[0];
         if(create) {
-            console.log("DEU RES NAS DESPESAS", create.rows[0]);
             return `Parabéns, o seu cadastro foi realizado com sucesso! `
         }
         return `Parabéns, o seu cadastro foi realizado com sucesso! `

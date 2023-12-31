@@ -31,9 +31,8 @@ const schema = z.object({
             ON CONFLICT (id) DO NOTHING
             RETURNING id, email, nome, token
         `;
-        // return create.rows[0];
+        
         if(create) {
-            console.log("DEU RES", create.rows[0]);
             return `Parabéns, o seu cadastro foi realizado com sucesso! `
         }
         return `Parabéns, o seu cadastro foi realizado com sucesso! `

@@ -6,6 +6,7 @@ import { listarDespesas } from './../api/despesas'
 import { useRouter } from 'next/router';
 import Menu from '../lib/components/menu';
 import Footer from '../lib/components/footer';
+import { format } from 'date-fns';
 
 
 
@@ -208,7 +209,7 @@ export default function Financas(props: any) {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                   >
-                    {item.data}
+                    {item.data ? (format(item?.data, 'dd/MM/yyyy')) : ''}
                   </th>
                   <th
                     scope="row"
