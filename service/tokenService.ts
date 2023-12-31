@@ -21,7 +21,7 @@ export const tokenService = {
             path: '/',
         });
         nookies.set(ctx, NOME_USER, nome, {
-            maxAge: ONE_DAY,
+            maxAge: ONE_MINUTE,
             path: '/',
         })
     },

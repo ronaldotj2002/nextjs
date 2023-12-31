@@ -3,10 +3,6 @@ import { Usuario } from "@/pages/lib/models/usuarios";
 import { sql } from "@vercel/postgres";
 import bcrypt from "bcrypt";
 
-
-
-console.log("POST - body")
-
 export async function getUsuarioPorEmail(email: string): Promise<Usuario | undefined> {
     
     try {
@@ -35,10 +31,8 @@ export default async function POST(req:any, res:any) {
                 return res.status(401).json({ error: 'Usuário não encontrado.' });
             
                 const senhaOk = await bcrypt.compare(senha, usuario.senha);
-                console.log("senhaOk", senhaOk)
-                
+                               
                 if(!senhaOk){
-                    console.log("USER", usuario)
                     return res.status(401).json({ error: 'Senha incorreta.' });
                 } 
                 

@@ -6,7 +6,7 @@ export async function listarDespesas(req:any, res:any) {
     const token = req    
     try {
         const usuario = await getDespesas(token);
-        if(usuario) console.log(usuario, "<===============")
+        if(usuario)
         return usuario;
        
     } catch (err) {

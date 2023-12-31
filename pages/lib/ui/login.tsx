@@ -38,13 +38,11 @@ export default function LoginForm() {
             senha: usuario.senha
           })
             .then(() => {
-              console.log("SUCESSO!!!!")
               router.push('/financas')
               return
 
             })
             .catch(() => {
-              console.log("usuario ou senha inválidos")
               setMensagem('Usuario ou senha inválidos')
               return
 
@@ -74,8 +72,8 @@ export default function LoginForm() {
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Não possui login?
-            <Link href="/cadastro"> 
-            <span className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"> Criar Conta.</span></Link>
+            <Link href="/cadastro">
+              <span className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"> Criar Conta.</span></Link>
           </p>
         </form>
       </div>

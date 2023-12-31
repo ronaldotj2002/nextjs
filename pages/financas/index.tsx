@@ -11,7 +11,7 @@ import { format } from 'date-fns';
 
 
 export default function Financas(props: any) {
-  console.log("PROPS", props);
+
   const router = useRouter();
 
   const [despesa, setDespesa] = useState({ data: '', despesa: '', valor: '', descricao: '', id_usuario: '',});
@@ -56,7 +56,6 @@ export default function Financas(props: any) {
 
         if (response.ok) {
 
-          console.log("NOVA DESPESA FRONT");
           // Se o cadastro foi bem-sucedido, busque novamente as despesas do usuário          
           window.location.reload();
         }
@@ -254,16 +253,7 @@ export async function getServerSideProps(ctx) {
   const dadosusuario = await listarDespesas(session, '')
   const despesasUsuario = JSON.parse(JSON.stringify({dadosusuario}))
 
-  console.log("meus dados", despesasUsuario);
-
-  
-
-  
-  console.log("token de consulta: ", session )
-  
-  // console.log("<========>", cookies)
   if(session) {   
-     console.log("<===DADOS USUARIO DESPESAS====dd>")
       return {
         props: {
           despesasUsuario
