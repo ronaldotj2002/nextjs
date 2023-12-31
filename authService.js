@@ -1,6 +1,6 @@
 import { HttpClient } from './pages/lib/infra/HttpClient/HttpClient';
 import { tokenService } from './service/tokenService';
-import { getUsuarioSession } from './pages/api/session/index'
+import { getUsuarioSession } from './pages/api/despesas/index'
 
 export const authService = {
     async login(email, senha) {
@@ -19,7 +19,7 @@ export const authService = {
             if(!resposta.ok) throw new Error('Usuário ou senha inválidos!')
             const body = await resposta.body;
             console.log("resposta do servidor", body)
-            tokenService.save(body.token)
+            tokenService.save(body.nome, body.token)
         })
         .catch((err) => {
             console.error("Erro ao fazer login", err);
@@ -42,5 +42,29 @@ export const authService = {
             console.error("Erro ao fazer login", err);
             throw err;
         })
-    }
+    },
+
+    // async dadosDespesas(token) {
+
+    //     return HttpClient('/api/despesas', {
+    //         method: 'GET',
+    //         headers: { 
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({
+    //             token,
+    //         })
+    //     })
+    //     .then(async (resposta) => {
+           
+    //         if(!resposta.ok) throw new Error('Dados não encontrados')
+    //         const body = await resposta.body;
+    //         console.log("resposta do servidor despesas", body)
+            
+    //     })
+    //     .catch((err) => {
+    //         console.error("Erro ao consultar dados de despesas.", err);
+    //         throw err;
+    //     });
+    // }
 };

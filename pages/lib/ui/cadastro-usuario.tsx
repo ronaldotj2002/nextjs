@@ -50,22 +50,15 @@ export default function Cadastro() {
 
             setMensagem(data.mensagem);
            
-            if(data.error?.issues[0].path[0] === 'nome') 
-                setMensagemNome('O nome precisa ter pelo menos 6 caracteres');
+            if(data.listaErros.nome) 
+                setMensagemNome(data.listaErros.nome);
             
+            if(data.listaErros.email) 
+                setMensagemEmail(data.listaErros.email);
+            
+            if(data.listaErros.senha) 
+                setMensagemSenha(data.listaErros.senha);
 
-            if(data.error?.issues[0].path[0] === 'email') 
-                setMensagemEmail('O e-mail precisa ter pelo menos 7 caracteres');
-            
-
-            if(data.error?.issues[0].path[0] === 'senha') 
-                setMensagemSenha('A senha precisa ter pelo menos 5 caracteres');
-          
-              
-            
-          
-          
-    
           setUsuario({ email: '', nome: '', senha: '' });
           
         } catch (error) {
@@ -75,12 +68,12 @@ export default function Cadastro() {
 
 
   return (
-    <main className="flex px-6 drop-shadow-2xl lg:w-3/4 bg-white">
-      <section className="bg-azul-escuro hidden lg:block w-1/2 rounded-l-lg bg-[url('/images/img-cadastro.jpg')] bg-no-repeat">
+    <main className="grid grid-cols-2 gap-4 bg-white">
+      <section className="bg-azul-escuro hidden lg:block rounded-l-lg bg-[url('/images/img-cadastro.jpg')] bg-no-repeat">
         
       </section>
 
-      <section className="bg-white p-10 gap-6 flex flex-col rounded-lg lg:w-1/2 justify-center lg:rounded-l-none">
+      <section className="bg-white p-10 gap-6 flex flex-col rounded-lg justify-center lg:rounded-l-none">
         <div className="hidden">
     
         </div>
@@ -94,7 +87,7 @@ export default function Cadastro() {
             <label className="block text-sm font-medium leading-6 text-gray-900">E-mail</label>
             <div className="mt-2">
               <input required id="email" name="email" type="email" value={usuario.email} onChange={handleChange} className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2" />
-              <small>{mensagemEmail ?? ''}</small>
+              <small className="text-red-700">{mensagemEmail ?? ''}</small>
             </div>
           </div>
 
@@ -102,7 +95,7 @@ export default function Cadastro() {
             <label className="block text-sm font-medium leading-6 text-gray-900">Nome</label>
             <div className="mt-2">
               <input required id="nome" name="nome" type="nome" value={usuario.nome} onChange={handleChange} className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2" />
-                <small>{mensagemNome ?? ''}</small>
+                <small className="text-red-700">{mensagemNome ?? ''}</small>
             </div>
           </div>
 
@@ -113,7 +106,7 @@ export default function Cadastro() {
 
             <div className="mt-2">
               <input required id="senha" name="senha" type="password" value={usuario.senha} onChange={handleChange} className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2" />
-              <small>{mensagemSenha ?? ''}</small>
+              <small className="text-red-700">{mensagemSenha ?? ''}</small>
             </div>
           </div>
 
@@ -132,11 +125,13 @@ export default function Cadastro() {
 
         <p className="mt-10 text-center text-sm text-gray-500">
           Já possui conta?
-          <Link href="/login" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"> Logar</Link>
+          <Link href="/login">
+            <span className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"> Logar</span>
+            </Link>
         </p>
 
       </section>
-    <pre></pre>
+    
     </main>
   )
 

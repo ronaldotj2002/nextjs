@@ -13,7 +13,6 @@
     "bcrypt": "5.1.1",
     "next": "14.0.4",
     "nookies": "2.5.2",
-    "npmcli": "^1.2.2",
     "react": "^18",
     "react-dom": "^18",
     "webpack": "^5.0.0",

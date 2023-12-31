@@ -1,9 +1,14 @@
 
 import { tokenService } from '@/service/tokenService';
 import React from 'react';
-import { getUsuarioSession } from './api/session';
+import { getUsuarioSession } from './api/despesas';
+import { useRouter } from 'next/router';
+import Menu from './lib/components/menu';
+import Footer from './lib/components/footer';
+
 
 function Usesession() {
+
   const [session, setSession] = React.useState(Object);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
@@ -44,23 +49,34 @@ function Usesession() {
 }
 
 export default function Home(props) {
+  const router = useRouter();
 
   const session = Usesession();
 
   console.log("==>",session)
 
+  const handleClick = () => {
+    router.push('/login')
+  }
+
   return (   
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5x1 w-full items-center justify-between font-mono text-sm">
-        <h1>Projeto de Bloco - Alterado</h1>
-        <pre>
-          {JSON.stringify(props, null, 2)}
-        </pre>
-      </div>
-      <p>
-          <a href="/login">Login</a>
-        </p>
-   
+<Menu />
+<div className="grid gap-x-8 gap-y-4 grid-cols-2">
+          <div>01</div>
+          <div>02</div>
+          <div>03</div>
+          <div>04</div>
+          <div>05</div>
+          <div>
+            
+            </div>
+           
+        </div>
+
+        
+  
+        <Footer />
     </main>
     
   )

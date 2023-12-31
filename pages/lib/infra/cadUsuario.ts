@@ -8,9 +8,9 @@ import crypto from 'crypto';
 export async function cadastrarUsuario(usuario: Usuario) {
 
 const schema = z.object({
-    email: z.string().min(7),
-    nome: z.string().min(6),
-    senha: z.string().min(5),
+    email: z.string().min((7), 'Informe o seu e-mail'),
+    nome: z.string().min((3), 'É preciso no mínimo 3 caracteres'),
+    senha: z.string().min((5), 'A senha precisa ter um mínimo de 5 caracteres'),
   })
 
   const parse = schema.parse({
