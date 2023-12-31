@@ -25,7 +25,7 @@ export default function LoginForm() {
   return (
     <div className="bg-white grid grid-cols-4 gap-4 pb-8">
       <div className="col-start-2 col-span-2">
-        <img className="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" />
+
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Login</h2>
       </div>
 
