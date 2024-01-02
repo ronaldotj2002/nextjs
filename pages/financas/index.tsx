@@ -177,7 +177,6 @@ export default function Financas(props: any) {
       <section className="bg-white p-10 col-span-2 gap-6 flex flex-col rounded-lg justify-center lg:rounded-l-none">
         <div className="text-center">
           <h1 className="text-4xl mb-2">Minhas Despesas</h1>
-          <p className="text-xl text-gray-700 mb-2">cadastre a sua despesa</p>
         </div>
 
         <div className="relative overflow-x-auto">

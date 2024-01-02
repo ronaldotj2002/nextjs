@@ -17,11 +17,11 @@ export const tokenService = {
         globalThis?.sessionStorage?.setItem(TOKEN_KEY, token);
         globalThis?.sessionStorage?.setItem(NOME_USER, nome);
         nookies.set(ctx, TOKEN_KEY, token, {
-            maxAge: ONE_MINUTE,
+            maxAge: ONE_DAY,
             path: '/',
         });
         nookies.set(ctx, NOME_USER, nome, {
-            maxAge: ONE_MINUTE,
+            maxAge: ONE_DAY,
             path: '/',
         })
     },
