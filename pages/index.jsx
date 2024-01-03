@@ -60,9 +60,9 @@ export default function Home(props) {
   }
 
   return (   
-    <main classNNameName="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
 <Menu />
-<div classNNameName="grid gap-x-8 gap-y-4 grid-cols-1 bg-[url('/images/fnc.jpg')] bg-no-repeat">
+<div className="grid gap-x-8 gap-y-4 grid-cols-1 bg-[url('/images/fnc.jpg')] bg-no-repeat">
 
   
 
