@@ -17,9 +17,9 @@ module.exports = {
      };
 
     if (!isServer) {
-      config.node = {
-        fs: 'empty'
-      };
+      // config.node = {
+      //   fs: 'empty'
+      // };
       config.module.rules.push({
         test: /\.html$/,
         use: 'html-loader'
