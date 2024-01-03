@@ -8,6 +8,9 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "engines": {
+    "node": "21.5.0"
+  },
   "dependencies": {
     "@vercel/postgres": "^0.5.1",
     "bcrypt": "5.1.1",
@@ -21,7 +24,6 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
-    "@types/node": "^18",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
