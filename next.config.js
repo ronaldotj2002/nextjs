@@ -14,7 +14,7 @@ module.exports = {
       tls: false,
       dgram: false,
       dns: false,
-      timers: require?.resolve('timers/promises'),
+      timers: require?.resolve('timers/promises') = false,
      };
 
     if (!isServer) {
