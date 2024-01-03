@@ -14,16 +14,16 @@ module.exports = {
       tls: false,
       dgram: false,
       dns: false,
-      timers: false
-     };
-
+    };
+    
     if (!isServer) {
       // config.node = {
-      //   fs: 'empty'
-      // };
-      config.module.rules.push({
-        test: /\.html$/,
-        use: 'html-loader'
+        //   fs: 'empty'
+        // };
+        config.module.rules.push({
+          test: /\.html$/,
+          use: 'html-loader',
+          timers: require?.resolve('timers/promises'),
       });
     }
 
