@@ -6,7 +6,6 @@ module.exports = {
       ...config.resolve.fallback, 
       net: false, 
       os: false, 
-      fs: false,
       child_process: false,
       "mock-aws-s3": false,
       "aws-sdk": false,
@@ -14,10 +13,18 @@ module.exports = {
       tls: false,
       dgram: false,
       dns: false,
-      timers: require.resolve('timers/promises'),
+      // timers: require.resolve('timers/promises'),
      };
 
-   
+    if (!isServer) {
+      config.node = {
+        fs: 'empty'
+      };
+      config.module.rules.push({
+        test: /\.html$/,
+        use: 'html-loader'
+      });
+    }
 
     return config;
   },
