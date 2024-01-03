@@ -6,7 +6,7 @@ module.exports = {
       ...config.resolve.fallback, 
       net: false, 
       os: false, 
-      fs: require.resolve(false),
+      fs: false,
       child_process: false,
       "mock-aws-s3": false,
       "aws-sdk": false,
