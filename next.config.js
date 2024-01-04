@@ -1,15 +1,27 @@
 module.exports = {
   // reactStrictMode: true,
-  future: {
-    webpack5: true,
-  },
-
+  // webpack5: true,
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Verifica se está no ambiente de desenvolvimento e não é um servidor
-    if (dev && !isServer) {
-      config.node = {
-        fs: 'empty', // Evita erros de 'fs' durante o desenvolvimento
-      };
+    config.resolve.fallback = { 
+      ...config.resolve.fallback, 
+      net: false, 
+      os: false, 
+      fs: false,
+      child_process: false,
+      "mock-aws-s3": false,
+      "aws-sdk": false,
+      nock: false,
+      tls: false,
+      dgram: false,
+      dns: false,
+      // timers: require.resolve('timers/promises'),
+     };
+
+    if (!isServer) {
+      config.module.rules.push({
+        test: /\.html$/,
+        use: 'html-loader'
+      });
     }
 
     return config;
