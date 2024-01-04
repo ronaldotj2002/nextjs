@@ -1,7 +1,7 @@
 module.exports = {
   // reactStrictMode: true,
   // webpack5: true,
-  timers: require.resolve('timers/promises'),
+  timers: false,
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.resolve.fallback = { 
       ...config.resolve.fallback, 
