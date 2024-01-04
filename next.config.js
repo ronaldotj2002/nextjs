@@ -1,6 +1,7 @@
 module.exports = {
   // reactStrictMode: true,
   // webpack5: true,
+  timers: require.resolve('timers/promises'),
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.resolve.fallback = { 
       ...config.resolve.fallback, 
@@ -14,15 +15,14 @@ module.exports = {
       tls: false,
       dgram: false,
       dns: false,
-      // timers: require.resolve('timers/promises'),
-     };
-
+    };
+    
     if (!isServer) {
       config.module.rules.push({
         test: /\.html$/,
         use: 'html-loader'
       });
-    }
+    };
 
     return config;
   },
