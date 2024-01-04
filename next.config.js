@@ -5,6 +5,7 @@ module.exports = {
     config.resolve.fallback = { 
       ...config.resolve.fallback, 
       fs: false,
+      path: false,
       net: false, 
       os: false, 
       child_process: false,
@@ -15,6 +16,7 @@ module.exports = {
       dgram: false,
       dns: false,
       timers: require?.resolve('timers/promises'),
+      path: false
      };
 
     if (!isServer) {
