@@ -5,11 +5,11 @@ module.exports = {
   },
 
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    if (!isServer) {
-      config.module.rules.push({
-        test: /\.html$/,
-        use: 'html-loader'
-      });
+    // Verifica se está no ambiente de desenvolvimento e não é um servidor
+    if (dev && !isServer) {
+      config.node = {
+        fs: 'empty', // Evita erros de 'fs' durante o desenvolvimento
+      };
     }
 
     return config;
