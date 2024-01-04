@@ -14,6 +14,7 @@
     "bcrypt": "5.1.1",
     "date-fns": "^3.0.6",
     "next": "^13",
+    "node": "^18",
     "nookies": "2.5.2",
     "react": "^18",
     "react-dom": "^18",
@@ -22,7 +23,6 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
-    "@types/node": "^18",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",

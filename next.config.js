@@ -3,7 +3,7 @@ module.exports = {
   future: {
     webpack5: true,
   },
-  
+
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.resolve.fallback = { 
       ...config.resolve.fallback, 
@@ -17,7 +17,7 @@ module.exports = {
       tls: false,
       dgram: false,
       dns: false,
-      timers: require?.resolve('timers/promises'),
+      timers: require.resolve('timers/promises'),
       path: false
      };
 
