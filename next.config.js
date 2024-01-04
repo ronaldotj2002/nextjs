@@ -1,21 +1,37 @@
 module.exports = {
-
- 
+  // reactStrictMode: true,
   future: {
-
- 
-    webpack5: true,   
+    webpack5: true,
   },
+  
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    config.resolve.fallback = { 
+      ...config.resolve.fallback, 
+      fs: false,
+      net: false, 
+      os: false, 
+      child_process: false,
+      "mock-aws-s3": false,
+      "aws-sdk": false,
+      nock: false,
+      tls: false,
+      dgram: false,
+      dns: false,
+      timers: require?.resolve('timers/promises'),
+      path: false
+     };
 
-  webpack(config) {
-    config.resolve.fallback = {
-
+    if (!isServer) {
      
-      ...config.resolve.fallback,  
+      config.module.rules.push({
+        test: /\.html$/,
+        use: 'html-loader'
+      });
+    }
 
-      fs: false, 
-    };
-    
     return config;
+  },
+  experimental: {
+    forceSwcTransforms: true,
   },
 };
